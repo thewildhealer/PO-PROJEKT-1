@@ -38,14 +38,13 @@ void Zwierze::akcja() {
 
 void Zwierze::kolizja() {
 	// ten if chyba nie do konca dziala jak nalezy
-	// ta metoda w ogole cos jakos nie dziala chyba
 	int atakowanySila = swiat.getRysunek(x, y)->getSila();
 	if (typeid(*swiat.getRysunek(x, y)) == typeid(*this)) {
 		int i = -1, j = -1;
 		bool success = false;
 		for (; i <= 1; i++)
 			for (; j <= 1; j++)
-				if (swiat.getRysunek(x + i, y + j) != nullptr) {
+				if (x + i < swiat.getSzerokosc() && x + i >= 0 && y + j < swiat.getWysokosc() && y + j > 0 && swiat.getRysunek(x + i, y + j) != nullptr) {
 					success = true;
 					break;
 				};

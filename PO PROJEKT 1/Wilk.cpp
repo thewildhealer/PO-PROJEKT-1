@@ -27,6 +27,6 @@ char Wilk::rysowanie() {
 	return 'w';
 }
 
-Wilk* Wilk::kopuluj(int x, int y) {
-	return new Wilk(x, y, swiat);
+void Wilk::kopuluj(int x, int y) {
+	swiat.dodajOrganizm(new Wilk(x, y, swiat));
 }
