@@ -1,0 +1,16 @@
+#pragma once
+#include "Organizm.h"
+#include <iostream>
+#include <typeinfo>
+
+class Zwierze :
+	public Organizm {
+public:
+	Zwierze(Swiat& swiat);
+	Zwierze(int x, int y, Swiat& swiat);
+	~Zwierze();
+
+	void akcja() override;
+	void kolizja() override;
+	char rysowanie() override = 0;
+};
