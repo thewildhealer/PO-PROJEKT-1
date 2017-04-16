@@ -29,6 +29,7 @@ void Zwierze::akcja() {
 		while (y > swiat.getWysokosc() - 1) y--;
 		while (x > swiat.getSzerokosc() - 1) x--;
 	}
+	if (x == prevX && y == prevY) return;
 	if (swiat.getRysunek(x, y) == nullptr) {
 		swiat.setRysunek(x, y, this);
 		swiat.setRysunek(prevX, prevY, nullptr);
@@ -37,6 +38,7 @@ void Zwierze::akcja() {
 }
 
 void Zwierze::kolizja() {
+	// TODO: sprawdzic dlaczego rozmnazaja sie do max rozmiar-1 
 	// ten if chyba nie do konca dziala jak nalezy
 	int atakowanySila = swiat.getRysunek(x, y)->getSila();
 	if (typeid(*swiat.getRysunek(x, y)) == typeid(*this)) {

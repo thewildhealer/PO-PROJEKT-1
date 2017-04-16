@@ -24,7 +24,8 @@ int main() {
 		swiat.dodajOrganizm(org);
 	}
 	swiat.rysujSwiat();
-	while (std::cin.get()) {
+//	while (std::cin.get()) {
+	while (true) {
 		swiat.wykonajTure();
 		system("cls");
 		swiat.rysujSwiat();
