@@ -25,3 +25,7 @@ void Owca::kolizja() {
 char Owca::rysowanie() {
 	return 'o';
 }
+
+Owca* Owca::kopuluj(int x, int y) {
+	return new Owca(x, y, swiat);
+}

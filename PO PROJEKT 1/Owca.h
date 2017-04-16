@@ -11,4 +11,5 @@ public:
 	void akcja() override;
 	void kolizja() override;
 	char rysowanie() override;
+	Owca* kopuluj(int x, int y) override;
 };

@@ -11,7 +11,7 @@ int main() {
 	srand(time(NULL));
 
 	Swiat swiat(20, 10);
-	std::vector<Organizm*> organizmy;
+	std::vector<Organizm *> organizmy;
 
 	organizmy.push_back(new Owca(0, 0, swiat));
 	organizmy.push_back(new Owca(5, 0, swiat));

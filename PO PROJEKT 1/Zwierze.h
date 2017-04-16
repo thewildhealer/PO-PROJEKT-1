@@ -13,4 +13,5 @@ public:
 	void akcja() override;
 	void kolizja() override;
 	char rysowanie() override = 0;
+	virtual Zwierze* kopuluj(int x, int y) = 0;
 };

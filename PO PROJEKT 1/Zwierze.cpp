@@ -38,6 +38,7 @@ void Zwierze::akcja() {
 
 void Zwierze::kolizja() {
 	// ten if chyba nie do konca dziala jak nalezy
+	// ta metoda w ogole cos jakos nie dziala chyba
 	int atakowanySila = swiat.getRysunek(x, y)->getSila();
 	if (typeid(*swiat.getRysunek(x, y)) == typeid(*this)) {
 		int i = -1, j = -1;
@@ -50,8 +51,7 @@ void Zwierze::kolizja() {
 				};
 
 
-		// testowo
-		if (success) swiat.dodajOrganizm(new Owca(x + i, y + j, swiat));
+		if (success) this->kopuluj(x + i, y + j);
 		x = prevX;
 		y = prevY;
 	}
