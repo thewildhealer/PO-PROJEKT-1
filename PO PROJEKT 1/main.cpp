@@ -10,7 +10,7 @@
 int main() {
 	srand(time(NULL));
 
-	Swiat swiat(20, 10);
+	Swiat swiat(10, 10);
 	std::vector<Organizm *> organizmy;
 
 //	organizmy.push_back(new Owca(0,0, swiat));

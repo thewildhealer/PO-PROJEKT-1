@@ -18,6 +18,8 @@ public:
 	void setY(int y);
 	int getSila() const;
 	int getInicjatywa() const;
+	int getPrevX() const;
+	int getPrevY() const;
 
 protected:
 	int sila;

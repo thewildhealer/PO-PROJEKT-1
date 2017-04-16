@@ -29,6 +29,15 @@ int Organizm::getInicjatywa() const {
 	return inicjatywa;
 }
 
+int Organizm::getPrevX() const {
+	return prevX;
+}
+
+int Organizm::getPrevY() const {
+	return prevY;
+}
+
+
 int Organizm::getSila() const {
 	return sila;
 }

@@ -17,7 +17,7 @@ void Zwierze::akcja() {
 	prevX = x;
 	prevY = y;
 	int los;
-	while (prevX == x && prevY == y) {
+	for (int i = 0; i < 4 && prevX == x && prevY == y; i++) {
 		los = rand() % 4;
 		if (los == 0) x++;
 		else if (los == 1) x--;
@@ -42,13 +42,18 @@ void Zwierze::kolizja() {
 	if (typeid(*swiat.getRysunek(x, y)) == typeid(*this)) {
 		int i = -1, j = -1;
 		bool success = false;
-		for (; i < 1; i++)
-			for (; j < 1; j++)
-				if (x + i < swiat.getSzerokosc() && x + i >= 0 && y + j < swiat.getWysokosc() && y + j > 0 && swiat.getRysunek(x + i, y + j) == nullptr) {
+		for (; i < 1; ++i) {
+			for (; j < 1; ++j) {
+				if (x + i < swiat.getSzerokosc() - 1 && x + i >= 0 && // nie wykracza poza szerokoœæ
+					y + j < swiat.getWysokosc() - 1 && y + j > 0 && // nie wykracza poza wysokoœæ
+					swiat.getRysunek(x + i, y + j) == nullptr) { // nie rozmnaza sie gdy cos juz tam jest
 					success = true;
 					break;
-				};
-		if (success) kopuluj(x + i, y + j);
+				}
+			}
+		}
+		if (success && swiat.getRysunek(x + i, y + j) == nullptr)
+			kopuluj(x + i, y + j);
 		x = prevX;
 		y = prevY;
 	}

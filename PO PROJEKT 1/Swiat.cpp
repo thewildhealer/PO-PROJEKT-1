@@ -56,13 +56,18 @@ void Swiat::rysujSwiat() {
 		rysunek[org->getX()*szerokosc + org->getY()] = org;
 	}
 	*/
-
+	std::cout << "X|";
+	for (int i = 0; i < szerokosc; i++)
+		std::cout << i;
+	std::cout << std::endl;
 	for (int i = 0; i < wysokosc; i++) {
+		std::cout << i << "|";
 		for (int j = 0; j < szerokosc; j++)
 			if (rysunek[j + i * szerokosc] == nullptr) std::cout << "_";
 			else std::cout << rysunek[i * szerokosc + j]->rysowanie();
-		std::cout << std::endl;
+			std::cout << std::endl;
 	}
+	std::cout << organizmy.size() << "| ";
 	for (int i = 0; i < organizmy.size(); i++)
 		std::cout << organizmy[i]->getInicjatywa() << " ";
 }
