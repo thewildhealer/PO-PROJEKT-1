@@ -42,15 +42,13 @@ void Zwierze::kolizja() {
 	if (typeid(*swiat.getRysunek(x, y)) == typeid(*this)) {
 		int i = -1, j = -1;
 		bool success = false;
-		for (; i <= 1; i++)
-			for (; j <= 1; j++)
-				if (x + i < swiat.getSzerokosc() && x + i >= 0 && y + j < swiat.getWysokosc() && y + j > 0 && swiat.getRysunek(x + i, y + j) != nullptr) {
+		for (; i < 1; i++)
+			for (; j < 1; j++)
+				if (x + i < swiat.getSzerokosc() && x + i >= 0 && y + j < swiat.getWysokosc() && y + j > 0 && swiat.getRysunek(x + i, y + j) == nullptr) {
 					success = true;
 					break;
 				};
-
-
-		if (success) this->kopuluj(x + i, y + j);
+		if (success) kopuluj(x + i, y + j);
 		x = prevX;
 		y = prevY;
 	}
