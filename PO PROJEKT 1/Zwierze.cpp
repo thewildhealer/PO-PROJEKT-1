@@ -58,7 +58,7 @@ void Zwierze::kolizja() {
 		}
 		if (success && swiat.getRysunek(x + i, y + j) == nullptr) {
 			swiat.narodziny(this, x + i, y + j);
-			kopuluj(x + i, y + j);
+			this->kopuluj(x + i, y + j);
 		}
 		x = prevX;
 		y = prevY;

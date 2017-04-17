@@ -5,7 +5,7 @@ Lis::Lis(Swiat& swiat) : Zwierze::Zwierze(swiat) {
 	sila = 3;
 }
 
-Lis::Lis(int x, int y, Swiat& swiat) : Zwierze::Zwierze(swiat) {
+Lis::Lis(int x, int y, Swiat& swiat) : Zwierze::Zwierze(x, y, swiat) {
 	inicjatywa = 7;
 	sila = 3;
 }
@@ -15,7 +15,8 @@ void Lis::akcja() {
 }
 
 void Lis::kolizja() {
-	if (swiat.getRysunek(x, y)->getSila() < sila) {
+	// ten if wywala wyjatki (chyba)
+	if (swiat.getRysunek(x, y)->getSila() > sila) {
 		x = prevX;
 		y = prevY;
 		Zwierze::akcja();
