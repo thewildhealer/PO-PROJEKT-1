@@ -15,14 +15,14 @@ void Lis::akcja() {
 }
 
 void Lis::kolizja() {
-	// ten if wywala wyjatki
+	// ten if wywala wyjatki (juz rzadziej)
+	// ale zaczal wywalac stack overflow :<
 	if (swiat.getRysunek(x, y) != nullptr && swiat.getRysunek(x, y)->getSila() > sila) {
 		x = prevX;
 		y = prevY;
 		akcja();
 	}
-
-	Zwierze::kolizja();
+	else kolizja();
 }
 
 char Lis::rysowanie() {
