@@ -4,9 +4,11 @@
 
 
 Zwierze::Zwierze(Swiat& swiat) : Organizm(swiat) {
+	mod = 1;
 }
 
 Zwierze::Zwierze(int x, int y, Swiat& swiat) : Organizm(x, y, swiat) {
+	mod = 1;
 }
 
 
@@ -19,10 +21,10 @@ void Zwierze::akcja() {
 	int los;
 	for (int i = 0; i < 4 && prevX == x && prevY == y; i++) {
 		los = rand() % 4;
-		if (los == 0) x++;
-		else if (los == 1) x--;
-		else if (los == 2) y++;
-		else if (los == 3) y--;
+		if (los == 0) x+=mod;
+		else if (los == 1) x-=mod;
+		else if (los == 2) y+=mod;
+		else if (los == 3) y-=mod;
 
 		while (x < 0) x++;
 		while (y < 0) y++;
