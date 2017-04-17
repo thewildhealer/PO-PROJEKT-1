@@ -146,15 +146,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Antylopa.h" />
     <ClInclude Include="Komentator.h" />
     <ClInclude Include="Lis.h" />
     <ClInclude Include="Organizm.h" />
     <ClInclude Include="Owca.h" />
     <ClInclude Include="Swiat.h" />
     <ClInclude Include="Wilk.h" />
+    <ClInclude Include="Zolw.h" />
     <ClInclude Include="Zwierze.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Antylopa.cpp" />
     <ClCompile Include="Komentator.cpp" />
     <ClCompile Include="Lis.cpp" />
     <ClCompile Include="main.cpp" />
@@ -162,6 +165,7 @@
     <ClCompile Include="Owca.cpp" />
     <ClCompile Include="Swiat.cpp" />
     <ClCompile Include="Wilk.cpp" />
+    <ClCompile Include="Zolw.cpp" />
     <ClCompile Include="Zwierze.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

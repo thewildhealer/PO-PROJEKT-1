@@ -83,7 +83,6 @@ void Swiat::rysujSwiat() {
 void Swiat::setRysunek(int x, int y, Organizm* org) {
 	rysunek[x + y * szerokosc] = org;
 }
-
 Organizm* Swiat::getRysunek(int x, int y) {
 	return rysunek[x + y * szerokosc];
 }
