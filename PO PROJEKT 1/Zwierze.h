@@ -14,4 +14,6 @@ public:
 	void kolizja() override;
 	char rysowanie() override = 0;
 	virtual void kopuluj(int x, int y) = 0;
+
+	virtual std::string getNazwa() = 0;
 };

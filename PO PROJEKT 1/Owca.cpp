@@ -29,3 +29,7 @@ char Owca::rysowanie() {
 void Owca::kopuluj(int x, int y) {
 	swiat.dodajOrganizm(new Owca(x, y, swiat));
 }
+
+std::string Owca::getNazwa() {
+	return "Owca";
+}

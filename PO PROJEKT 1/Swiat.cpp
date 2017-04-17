@@ -1,11 +1,11 @@
 #include "Swiat.h"
 
 
-Swiat::Swiat() : szerokosc(5), wysokosc(5) {
+Swiat::Swiat() : szerokosc(5), wysokosc(5), komentator(new Komentator) {
 	inicjalizujRysunek();
 }
 
-Swiat::Swiat(int x, int y) : szerokosc(x), wysokosc(y) {
+Swiat::Swiat(int x, int y) : szerokosc(x), wysokosc(y), komentator(new Komentator) {
 	std::cout << "konstruktor swiata o szerokosci " << x << " i wysokosci " << y << std::endl;
 	inicjalizujRysunek();
 }
@@ -32,9 +32,10 @@ void Swiat::dodajOrganizm(Organizm* organizm) {
 	}
 }
 
-void Swiat::umrzyj(Organizm* organizm) {
-	setRysunek(organizm->getX(), organizm->getY(), nullptr);
-	organizmy.erase(std::remove(organizmy.begin(), organizmy.end(), organizm), organizmy.end());
+void Swiat::umrzyj(Organizm* napastnik, Organizm* ofiara) {
+	komentator->komentujSmierc(napastnik, ofiara);
+	setRysunek(ofiara->getX(), ofiara->getY(), nullptr);
+	organizmy.erase(std::remove(organizmy.begin(), organizmy.end(), ofiara), organizmy.end());
 }
 
 void Swiat::inicjalizujRysunek() {
@@ -67,9 +68,12 @@ void Swiat::rysujSwiat() {
 			else std::cout << rysunek[i * szerokosc + j]->rysowanie();
 			std::cout << std::endl;
 	}
-	std::cout << organizmy.size() << "| ";
+	std::cout << organizmy.size() << "| " << std::endl;
+	/*
 	for (int i = 0; i < organizmy.size(); i++)
 		std::cout << organizmy[i]->getInicjatywa() << " ";
+		*/
+	komentator->komentujTure();
 }
 
 void Swiat::setRysunek(int x, int y, Organizm* org) {

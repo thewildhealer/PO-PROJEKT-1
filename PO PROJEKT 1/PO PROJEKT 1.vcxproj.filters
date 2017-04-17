@@ -30,6 +30,9 @@
     <ClInclude Include="Owca.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Komentator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Swiat.cpp">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Owca.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Komentator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

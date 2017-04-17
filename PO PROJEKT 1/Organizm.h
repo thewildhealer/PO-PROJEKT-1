@@ -1,5 +1,6 @@
 #pragma once
 #include "Swiat.h"
+#include <string>
 class Swiat;
 
 class Organizm {
@@ -20,6 +21,7 @@ public:
 	int getInicjatywa() const;
 	int getPrevX() const;
 	int getPrevY() const;
+	virtual std::string getNazwa() = 0;
 
 protected:
 	int sila;

@@ -3,8 +3,10 @@
 #include <vector>
 #include <algorithm>
 #include "Organizm.h"
+#include "Komentator.h"
 
 class Organizm;
+class Komentator;
 
 class Swiat {
 public:
@@ -24,10 +26,12 @@ public:
 
 	void dodajOrganizm(Organizm* organizm);
 
-	void umrzyj(Organizm* organizm);
+	void umrzyj(Organizm* napastnik, Organizm* ofiara);
+
 private:
 	int szerokosc, wysokosc;
 	//	char *rysunek;
 	Organizm** rysunek;
 	std::vector<Organizm*> organizmy;
+	Komentator* komentator;
 };

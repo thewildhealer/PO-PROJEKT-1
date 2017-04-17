@@ -30,3 +30,7 @@ char Wilk::rysowanie() {
 void Wilk::kopuluj(int x, int y) {
 	swiat.dodajOrganizm(new Wilk(x, y, swiat));
 }
+
+std::string Wilk::getNazwa() {
+	return "Wilk";
+}

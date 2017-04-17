@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Komentator.h" />
     <ClInclude Include="Organizm.h" />
     <ClInclude Include="Owca.h" />
     <ClInclude Include="Swiat.h" />
@@ -153,6 +154,7 @@
     <ClInclude Include="Zwierze.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Komentator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Organizm.cpp" />
     <ClCompile Include="Owca.cpp" />

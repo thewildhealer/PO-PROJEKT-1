@@ -6,15 +6,16 @@
 #include "Zwierze.h"
 #include "Wilk.h"
 #include "Owca.h"
+#include "Komentator.h"
 
 int main() {
 	srand(time(NULL));
 
-	Swiat swiat(10, 10);
+	Swiat swiat(50, 20);
 	std::vector<Organizm *> organizmy;
 
-//	organizmy.push_back(new Owca(0,0, swiat));
-//	organizmy.push_back(new Owca(1,1, swiat));
+	organizmy.push_back(new Owca(0,0, swiat));
+	organizmy.push_back(new Owca(1,1, swiat));
 //	swiat.dodajOrganizm(new Owca(swiat));
 	for (int i = 0; i < 10; i++) {
 		organizmy.push_back(new Wilk(swiat));
@@ -23,9 +24,9 @@ int main() {
 	for (Organizm* org : organizmy) {
 		swiat.dodajOrganizm(org);
 	}
-	swiat.rysujSwiat();
-//	while (std::cin.get()) {
-	while (true) {
+//	swiat.rysujSwiat();
+	while (std::cin.get()) {
+//	while (true) {
 		swiat.wykonajTure();
 		system("cls");
 		swiat.rysujSwiat();

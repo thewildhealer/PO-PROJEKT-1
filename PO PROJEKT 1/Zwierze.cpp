@@ -54,15 +54,15 @@ void Zwierze::kolizja() {
 				}
 			}
 		}
-		if (success && swiat.getRysunek(x + i, y + j) == nullptr)
+		if (success && swiat.getRysunek(x + i, y + j) == nullptr) 
 			kopuluj(x + i, y + j);
 		x = prevX;
 		y = prevY;
 	}
 	else {
-		if (atakowanySila > this->sila) swiat.umrzyj(this);
+		if (atakowanySila > this->sila) swiat.umrzyj(swiat.getRysunek(x, y), this);
 		if (atakowanySila <= this->sila) {
-			swiat.umrzyj(swiat.getRysunek(x, y));
+			swiat.umrzyj(this, swiat.getRysunek(x, y));
 			swiat.setRysunek(x, y, this);
 			swiat.setRysunek(prevX, prevY, nullptr);
 		}
