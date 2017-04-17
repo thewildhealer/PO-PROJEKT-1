@@ -12,6 +12,7 @@ public:
 
 	void komentujTure();
 	void komentujSmierc(Organizm * napastnik, Organizm * ofiara);
+	void komentujNarodziny(Organizm * org, int x, int y);
 
 private:
 	std::vector<std::string> komentarze;

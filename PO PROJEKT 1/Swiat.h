@@ -27,6 +27,7 @@ public:
 	void dodajOrganizm(Organizm* organizm);
 
 	void umrzyj(Organizm* napastnik, Organizm* ofiara);
+	void narodziny(Organizm* org, int x, int y);
 
 private:
 	int szerokosc, wysokosc;

@@ -23,6 +23,12 @@ void Komentator::komentujSmierc(Organizm* napastnik, Organizm* ofiara) {
 	komentarze.push_back(pos + komentarz);
 }
 
+void Komentator::komentujNarodziny(Organizm* org, int x, int y) { 
+	std::string pos = "[" + std::to_string(x) + "," + std::to_string(y) + "] ";
+	std::string komentarz = "Narodzil/a sie nowy/a " + org->getNazwa()  + "!";
+	komentarze.push_back(pos + komentarz);
+}
+
 void Komentator::wyczyscKomentarze() {
 	komentarze.erase(komentarze.begin(), komentarze.end());
 }

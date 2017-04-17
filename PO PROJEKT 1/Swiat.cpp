@@ -38,6 +38,10 @@ void Swiat::umrzyj(Organizm* napastnik, Organizm* ofiara) {
 	organizmy.erase(std::remove(organizmy.begin(), organizmy.end(), ofiara), organizmy.end());
 }
 
+void Swiat::narodziny(Organizm* org, int x, int y) {
+	komentator->komentujNarodziny(org, x, y);
+}
+
 void Swiat::inicjalizujRysunek() {
 	rysunek = new Organizm*[szerokosc * wysokosc];
 	for (int i = 0; i < szerokosc * wysokosc; i++)
