@@ -13,8 +13,8 @@ Zolw::Zolw(int x, int y, Swiat& swiat) : Zwierze(x, y, swiat) {
 
 
 void Zolw::akcja() {
-	int los = rand() % 2;
-	if (los) Zwierze::akcja();
+	int los = rand() % 4;
+	if (!los) Zwierze::akcja();
 }
 
 void Zolw::kolizja() {
