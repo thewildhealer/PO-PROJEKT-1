@@ -36,7 +36,7 @@ void Zwierze::akcja() {
 		swiat.setRysunek(x, y, this);
 		swiat.setRysunek(prevX, prevY, nullptr);
 	}
-	else kolizja();
+	else this->kolizja();
 }
 
 void Zwierze::kolizja() {

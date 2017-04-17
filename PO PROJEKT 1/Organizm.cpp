@@ -37,7 +37,7 @@ int Organizm::getPrevY() const {
 	return prevY;
 }
 
-int Organizm::getSila() const {
+int Organizm::getSila() const {	
 	return sila;
 }
 

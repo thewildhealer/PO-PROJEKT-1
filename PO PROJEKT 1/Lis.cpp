@@ -15,12 +15,13 @@ void Lis::akcja() {
 }
 
 void Lis::kolizja() {
-	// ten if wywala wyjatki (chyba)
-	if (swiat.getRysunek(x, y)->getSila() > sila) {
+	// ten if wywala wyjatki
+	if (swiat.getRysunek(x, y) != nullptr && swiat.getRysunek(x, y)->getSila() > sila) {
 		x = prevX;
 		y = prevY;
-		Zwierze::akcja();
+		akcja();
 	}
+
 	Zwierze::kolizja();
 }
 
