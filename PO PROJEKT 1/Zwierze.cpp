@@ -4,6 +4,8 @@
 
 
 Zwierze::Zwierze(Swiat& swiat) : Organizm(swiat) {
+	prevX = x;
+	prevY = y;
 	mod = 1;
 }
 

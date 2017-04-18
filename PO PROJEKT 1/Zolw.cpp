@@ -18,7 +18,12 @@ void Zolw::akcja() {
 }
 
 void Zolw::kolizja(Organizm* napastnik) {
-	Zwierze::kolizja(napastnik); // tutaj dorzucic jakos trzeba odpieranie ataku
+	if (napastnik->getSila() < 5 && napastnik->rysowanie() != 'z') {
+		napastnik->setX(getPrevX());
+		napastnik->setY(getPrevY());
+		swiat.nieudanyAtak(napastnik, this);
+	}
+	else Zwierze::kolizja(napastnik); // tutaj dorzucic jakos trzeba odpieranie ataku
 }
 
 char Zolw::rysowanie() {

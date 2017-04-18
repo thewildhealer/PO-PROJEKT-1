@@ -25,11 +25,11 @@ int main() {
 //	organizmy.push_back(new WilczeJagody(swiat));
 	
 	for (int i = 0; i < 5; i++) {
-//		organizmy.push_back(new Zolw(swiat));
+		organizmy.push_back(new Zolw(swiat));
 //		organizmy.push_back(new Antylopa(swiat));
-		organizmy.push_back(new Lis(swiat));
-//		organizmy.push_back(new Owca(swiat));
-		organizmy.push_back(new Wilk(swiat));
+//		organizmy.push_back(new Lis(swiat));
+		organizmy.push_back(new Owca(swiat));
+//		organizmy.push_back(new Wilk(swiat));
 	}
 
 	for (Organizm* org : organizmy) {

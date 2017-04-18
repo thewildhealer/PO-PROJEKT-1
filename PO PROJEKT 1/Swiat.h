@@ -29,6 +29,7 @@ public:
 	void umrzyj(Organizm* napastnik, Organizm* ofiara);
 	void narodziny(Organizm* org, int x, int y);
 	void nowaRoslina(Organizm *org, int x, int y);
+	void nieudanyAtak(Organizm* napastnik, Organizm* ofiara);
 
 private:
 	int szerokosc, wysokosc;

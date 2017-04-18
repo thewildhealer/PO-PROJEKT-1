@@ -46,6 +46,10 @@ void Swiat::nowaRoslina(Organizm* org, int x, int y) {
 	komentator->komentujNowaRoslina(org, x, y);
 }
 
+void Swiat::nieudanyAtak(Organizm* napastnik, Organizm* ofiara) {
+	komentator->komentujNieudanyAtak(napastnik, ofiara);
+}
+
 void Swiat::inicjalizujRysunek() {
 	rysunek = new Organizm*[szerokosc * wysokosc];
 	for (int i = 0; i < szerokosc * wysokosc; i++)

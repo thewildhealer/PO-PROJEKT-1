@@ -35,6 +35,12 @@ void Komentator::komentujNowaRoslina(Organizm* org, int x, int y) {
 	komentarze.push_back(pos + komentarz);
 }
 
+void Komentator::komentujNieudanyAtak(Organizm* napastnik, Organizm* ofiara) {
+	std::string pos = "[" + std::to_string(ofiara->getX()) + "," + std::to_string(ofiara->getY()) + "] ";
+	std::string komentarz = ofiara->getNazwa() + " odparl/a atak od: " + napastnik->getNazwa() + "!";
+	komentarze.push_back(pos + komentarz);
+}
+
 void Komentator::wyczyscKomentarze() {
 	komentarze.erase(komentarze.begin(), komentarze.end());
 }
