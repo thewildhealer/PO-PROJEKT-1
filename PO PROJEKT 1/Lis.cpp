@@ -11,7 +11,7 @@ Lis::Lis(int x, int y, Swiat& swiat) : Zwierze::Zwierze(x, y, swiat) {
 }
 
 void Lis::akcja() {
-	prevX = x;
+	prevX = x; 
 	prevY = y;
 	int los;
 	for (int i = 0; i < 4 && prevX == x && prevY == y; i++) {
