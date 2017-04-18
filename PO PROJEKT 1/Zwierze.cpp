@@ -21,10 +21,10 @@ void Zwierze::akcja() {
 	int los;
 	for (int i = 0; i < 4 && prevX == x && prevY == y; i++) {
 		los = rand() % 4;
-		if (los == 0) x+=mod;
-		else if (los == 1) x-=mod;
-		else if (los == 2) y+=mod;
-		else if (los == 3) y-=mod;
+		if (los == 0) x += mod;
+		else if (los == 1) x -= mod;
+		else if (los == 2) y += mod;
+		else if (los == 3) y -= mod;
 
 		while (x < 0) x++;
 		while (y < 0) y++;
@@ -44,7 +44,7 @@ void Zwierze::kolizja() {
 	// ten if chyba nie do konca dziala jak nalezy
 	int atakowanySila = swiat.getRysunek(x, y)->getSila();
 	if (typeid(*swiat.getRysunek(x, y)) == typeid(*this)) {
-		
+
 		int count = 0;
 		int los = rand() % 10;
 		int i = 0, j = 0;
@@ -66,7 +66,8 @@ void Zwierze::kolizja() {
 		y = prevY;
 	}
 	else {
-		if (atakowanySila > this->sila) swiat.umrzyj(swiat.getRysunek(x, y), this);	
+		if (atakowanySila > this->sila)
+			swiat.umrzyj(swiat.getRysunek(x, y), this);
 		if (atakowanySila <= this->sila) {
 			swiat.umrzyj(this, swiat.getRysunek(x, y));
 			swiat.setRysunek(x, y, this);

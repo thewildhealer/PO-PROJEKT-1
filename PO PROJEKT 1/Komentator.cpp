@@ -19,7 +19,7 @@ void Komentator::komentujTure() {
 
 void Komentator::komentujSmierc(Organizm* napastnik, Organizm* ofiara) {
 	std::string pos = "[" + std::to_string(ofiara->getX()) + "," + std::to_string(ofiara->getY()) + "] ";
-	std::string komentarz = napastnik->getNazwa() + " zjadl/a: " + ofiara->getNazwa();
+	std::string komentarz = napastnik->getNazwa() + " annihiluje: " + ofiara->getNazwa();
 	komentarze.push_back(pos + komentarz);
 }
 

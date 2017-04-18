@@ -13,29 +13,31 @@
 #include "Zolw.h"
 #include "Trawa.h"
 #include "Mlecz.h"
+#include "WilczeJagody.h"
 
 int main() {
 	srand(time(NULL));
 
-	Swiat swiat(20, 10);
+	Swiat swiat(50, 20);
 	std::vector<Organizm *> organizmy;
-	organizmy.push_back(new Mlecz(5, 5, swiat));
-	organizmy.push_back(new Trawa(swiat));
+//	organizmy.push_back(new Mlecz(5, 5, swiat));
+//	organizmy.push_back(new Trawa(swiat));
+	organizmy.push_back(new WilczeJagody(swiat));
 	
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 30; i++) {
 //		organizmy.push_back(new Zolw(swiat));
-//		organizmy.push_back(new Antylopa(swiat));
+		organizmy.push_back(new Antylopa(swiat));
 //		 organizmy.push_back(new Lis(swiat));
 //		organizmy.push_back(new Owca(swiat));
-//		organizmy.push_back(new Wilk(swiat));
+		organizmy.push_back(new Wilk(swiat));
 	}
 
 	for (Organizm* org : organizmy) {
 		swiat.dodajOrganizm(org);
 	}
 	swiat.rysujSwiat();
-	while (std::cin.get()) {
-		//	while (true) {
+//	while (std::cin.get()) {
+	while (true) {
 		swiat.wykonajTure();
 		system("cls");
 		swiat.rysujSwiat();
