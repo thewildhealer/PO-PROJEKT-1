@@ -147,6 +147,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Antylopa.h" />
+    <ClInclude Include="BarszczSosnowskiego.h" />
+    <ClInclude Include="Guarana.h" />
     <ClInclude Include="Komentator.h" />
     <ClInclude Include="Lis.h" />
     <ClInclude Include="Mlecz.h" />
@@ -162,6 +164,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Antylopa.cpp" />
+    <ClCompile Include="BarszczSosnowskiego.cpp" />
+    <ClCompile Include="Guarana.cpp" />
     <ClCompile Include="Komentator.cpp" />
     <ClCompile Include="Lis.cpp" />
     <ClCompile Include="main.cpp" />

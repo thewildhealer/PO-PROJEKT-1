@@ -18,12 +18,14 @@ public:
 	int getY() const;
 	void setY(int y);
 	int getSila() const;
+	void setSila(int sila);
 	int getInicjatywa() const;
 	int getPrevX() const;
 	int getPrevY() const;
 	void setPrevX(int prevX);
 	void setPrevY(int prevY);
 	virtual std::string getNazwa() = 0;
+	virtual char getType() = 0;
 
 protected:
 	int sila;

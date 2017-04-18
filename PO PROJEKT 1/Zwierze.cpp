@@ -78,3 +78,7 @@ void Zwierze::kolizja(Organizm* napastnik) {
 
 	}
 }
+
+char Zwierze::getType() {
+	return 'z';
+}

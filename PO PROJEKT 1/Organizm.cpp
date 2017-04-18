@@ -50,6 +50,10 @@ int Organizm::getSila() const {
 	return sila;
 }
 
+void Organizm::setSila(int sila) {
+	this->sila = sila;
+}
+
 void Organizm::setX(int x) {
 	this->x = x;
 }

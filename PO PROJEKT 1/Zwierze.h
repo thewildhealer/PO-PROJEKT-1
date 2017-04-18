@@ -16,6 +16,7 @@ public:
 	virtual void kopuluj(int x, int y) = 0;
 
 	virtual std::string getNazwa() = 0;
+	char getType() override;
 protected: 
 	int mod;
 };

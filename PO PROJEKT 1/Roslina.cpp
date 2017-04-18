@@ -5,22 +5,21 @@ Roslina::Roslina(Swiat& swiat) : Organizm(swiat) {
 	prevY = y;
 	nowoZasiana = true;
 	inicjatywa = 0;
+	sila = 0;
 }
 
 Roslina::Roslina(int x, int y, Swiat& swiat) : Organizm(x, y, swiat) {
+	prevX = x;
+	prevY = y;
 	inicjatywa = 0;
+	sila = 0;
 }
 
 void Roslina::akcja() {
-	//	prevX = x;
-	//	prevY = y;
-	/*
-	 */
-
 
 	if (!nowoZasiana) {
 		int count = 0;
-		int los = rand() % 50;
+		int los = rand() % 5;
 		int i = 0, j = 0;
 		if (!los) {
 			while (count < 5 && swiat.getRysunek(x + i, y + j) != nullptr &&
@@ -42,6 +41,20 @@ void Roslina::akcja() {
 }
 
 void Roslina::kolizja(Organizm* napastnik) {
+	if (napastnik->getSila() >= this->sila) {
+		swiat.setRysunek(napastnik->getPrevX(), napastnik->getPrevY(), nullptr);
+		swiat.umrzyj(napastnik, this);
+	}
+	if (napastnik->getSila() < this->sila) {
+		swiat.setRysunek(napastnik->getPrevX(), napastnik->getPrevY(), nullptr);
+		swiat.umrzyj(napastnik, this);
+		swiat.umrzyj(this, napastnik);
+		swiat.setRysunek(napastnik->getX(), napastnik->getY(), nullptr);
+	}
+}
+
+char Roslina::getType() {
+	return 'r';
 }
 
 Roslina::~Roslina() {
