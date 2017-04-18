@@ -30,7 +30,7 @@ void Zolw::kopuluj(int x, int y) {
 }
 
 std::string Zolw::getNazwa() {
-	return "Antylopa";
+	return "Zolw";
 }
 
 Zolw::~Zolw() {

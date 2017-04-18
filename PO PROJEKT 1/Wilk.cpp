@@ -15,14 +15,6 @@ Wilk::Wilk(int x, int y, Swiat& swiat) : Zwierze(x, y, swiat) {
 Wilk::~Wilk() {
 }
 
-void Wilk::akcja() {
-	Zwierze::akcja();
-}
-
-void Wilk::kolizja() {
-	Zwierze::kolizja();
-}
-
 char Wilk::rysowanie() {
 	return 'w';
 }

@@ -12,6 +12,7 @@ Lis::Lis(int x, int y, Swiat& swiat) : Zwierze::Zwierze(x, y, swiat) {
 
 void Lis::akcja() {
 	Zwierze::akcja();
+	// tu moze cos bedzie jeszcze, a jak nei to wyrzuce te metode
 }
 
 void Lis::kolizja() {
@@ -20,9 +21,9 @@ void Lis::kolizja() {
 	if (swiat.getRysunek(x, y) != nullptr && swiat.getRysunek(x, y)->getSila() > sila) {
 		x = prevX;
 		y = prevY;
-		akcja();
+		this->akcja();
 	}
-	else kolizja();
+	else this->kolizja();
 }
 
 char Lis::rysowanie() {

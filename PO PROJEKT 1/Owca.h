@@ -8,8 +8,6 @@ public:
 	Owca(int x, int y, Swiat& swiat);
 	~Owca();
 
-	void akcja() override;
-	void kolizja() override;
 	char rysowanie() override;
 	void kopuluj(int x, int y) override;
 	std::string getNazwa() override;

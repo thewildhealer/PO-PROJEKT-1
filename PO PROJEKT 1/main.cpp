@@ -17,12 +17,12 @@ int main() {
 	Swiat swiat(50, 20);
 	std::vector<Organizm *> organizmy;
 
-	for (int i = 0; i < 3; i++) {
-		organizmy.push_back(new Zolw(swiat));
-		organizmy.push_back(new Antylopa(swiat));
-		// organizmy.push_back(new Lis(swiat));
+	for (int i = 0; i < 10; i++) {
+//		organizmy.push_back(new Zolw(swiat));
+	//	organizmy.push_back(new Antylopa(swiat));
+		 organizmy.push_back(new Lis(swiat));
 		organizmy.push_back(new Owca(swiat));
-		organizmy.push_back(new Wilk(swiat));
+		//organizmy.push_back(new Wilk(swiat));
 	}
 
 	for (Organizm* org : organizmy) {

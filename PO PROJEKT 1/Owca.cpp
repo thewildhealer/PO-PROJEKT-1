@@ -14,14 +14,6 @@ Owca::Owca(int x, int y, Swiat& swiat) : Zwierze(x, y, swiat) {
 Owca::~Owca() {
 }
 
-void Owca::akcja() {
-	Zwierze::akcja();
-}
-
-void Owca::kolizja() {
-	Zwierze::kolizja();
-}
-
 char Owca::rysowanie() {
 	return 'o';
 }
