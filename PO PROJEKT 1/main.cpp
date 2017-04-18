@@ -18,16 +18,16 @@
 int main() {
 	srand(time(NULL));
 
-	Swiat swiat(50, 20);
+	Swiat swiat(10, 5);
 	std::vector<Organizm *> organizmy;
 //	organizmy.push_back(new Mlecz(5, 5, swiat));
 //	organizmy.push_back(new Trawa(swiat));
 //	organizmy.push_back(new WilczeJagody(swiat));
 	
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 5; i++) {
 //		organizmy.push_back(new Zolw(swiat));
 //		organizmy.push_back(new Antylopa(swiat));
-//		 organizmy.push_back(new Lis(swiat));
+		organizmy.push_back(new Lis(swiat));
 //		organizmy.push_back(new Owca(swiat));
 		organizmy.push_back(new Wilk(swiat));
 	}

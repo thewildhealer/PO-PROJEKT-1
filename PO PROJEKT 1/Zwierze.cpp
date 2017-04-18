@@ -66,11 +66,11 @@ void Zwierze::kolizja(Organizm* napastnik) {
 	}
 	else {
 		if (napastnik->getSila() >= this->sila) {
-			swiat.umrzyj(napastnik, this);
-			swiat.setRysunek(x, y, napastnik);
 			swiat.setRysunek(napastnik->getPrevX(), napastnik->getPrevY(), nullptr);
+			swiat.umrzyj(napastnik, this);
 		}
 		if (napastnik->getSila() < this->sila) {
+			swiat.setRysunek(napastnik->getPrevX(), napastnik->getPrevY(), nullptr);
 			swiat.umrzyj(this, napastnik);
 		}
 

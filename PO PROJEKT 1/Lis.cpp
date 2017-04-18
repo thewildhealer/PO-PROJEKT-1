@@ -11,8 +11,35 @@ Lis::Lis(int x, int y, Swiat& swiat) : Zwierze::Zwierze(x, y, swiat) {
 }
 
 void Lis::akcja() {
-	Zwierze::akcja();
-	// tu moze cos bedzie jeszcze, a jak nei to wyrzuce te metode
+	prevX = x;
+	prevY = y;
+	int los;
+	for (int i = 0; i < 4 && prevX == x && prevY == y; i++) {
+		los = rand() % 4;
+		if (los == 0) x += mod;
+		else if (los == 1) x -= mod;
+		else if (los == 2) y += mod;
+		else if (los == 3) y -= mod;
+
+		while (x < 0) x++;
+		while (y < 0) y++;
+		while (y > swiat.getWysokosc() - 1) y--;
+		while (x > swiat.getSzerokosc() - 1) x--;
+	}
+	if (x == prevX && y == prevY) return;
+	if (swiat.getRysunek(x, y) == nullptr) {
+		swiat.setRysunek(x, y, this);
+		swiat.setRysunek(prevX, prevY, nullptr);
+	}
+	else if (swiat.getRysunek(x, y)->getSila() > sila) {
+		if (los) akcja();
+		else {
+			x = prevX;
+			y = prevY;
+			return;
+		}
+	}
+	else swiat.getRysunek(x, y)->kolizja(this);
 }
 
 

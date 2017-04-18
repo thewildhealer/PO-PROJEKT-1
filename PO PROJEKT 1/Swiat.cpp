@@ -34,6 +34,7 @@ void Swiat::dodajOrganizm(Organizm* organizm) {
 void Swiat::umrzyj(Organizm* napastnik, Organizm* ofiara) {
 	komentator->komentujSmierc(napastnik, ofiara);
 	setRysunek(ofiara->getX(), ofiara->getY(), nullptr);
+	setRysunek(napastnik->getX(), napastnik->getY(), napastnik);
 	organizmy.erase(std::remove(organizmy.begin(), organizmy.end(), ofiara), organizmy.end());
 }
 
