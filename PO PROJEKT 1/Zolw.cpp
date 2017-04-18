@@ -17,8 +17,8 @@ void Zolw::akcja() {
 	if (!los) Zwierze::akcja();
 }
 
-void Zolw::kolizja() {
-	Zwierze::kolizja(); // tutaj dorzucic jakos trzeba odpieranie ataku
+void Zolw::kolizja(Organizm* napastnik) {
+	Zwierze::kolizja(napastnik); // tutaj dorzucic jakos trzeba odpieranie ataku
 }
 
 char Zolw::rysowanie() {

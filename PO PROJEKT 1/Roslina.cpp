@@ -41,7 +41,7 @@ void Roslina::akcja() {
 	else nowoZasiana = false;
 }
 
-void Roslina::kolizja() {
+void Roslina::kolizja(Organizm* napastnik) {
 }
 
 Roslina::~Roslina() {

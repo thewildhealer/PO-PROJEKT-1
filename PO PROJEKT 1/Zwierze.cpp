@@ -36,15 +36,13 @@ void Zwierze::akcja() {
 		swiat.setRysunek(x, y, this);
 		swiat.setRysunek(prevX, prevY, nullptr);
 	}
-	else this->kolizja();
+	else swiat.getRysunek(x, y)->kolizja(this);
 }
 
-void Zwierze::kolizja() {
-	// TODO: sprawdzic dlaczego rozmnazaja sie do max rozmiar-1 
-	// ten if chyba nie do konca dziala jak nalezy
-	int atakowanySila = swiat.getRysunek(x, y)->getSila();
-	if (typeid(*swiat.getRysunek(x, y)) == typeid(*this)) {
-
+void Zwierze::kolizja(Organizm* napastnik) {
+	
+	//if (typeid(*napastnik) == typeid(*napastnik)) {
+	if(napastnik->rysowanie() == this->rysowanie()) {
 		int count = 0;
 		int los = rand() % 10;
 		int i = 0, j = 0;
@@ -58,20 +56,23 @@ void Zwierze::kolizja() {
 				count++;
 			};
 		}
+
 		if (swiat.getRysunek(x + i, y + j) == nullptr) {
 			swiat.narodziny(this, x + i, y + j);
 			this->kopuluj(x + i, y + j);
 		}
-		x = prevX;
-		y = prevY;
+		napastnik->setX(napastnik->getPrevX());
+		napastnik->setY(napastnik->getPrevY());
 	}
 	else {
-		if (atakowanySila > this->sila)
-			swiat.umrzyj(swiat.getRysunek(x, y), this);
-		if (atakowanySila <= this->sila) {
-			swiat.umrzyj(this, swiat.getRysunek(x, y));
-			swiat.setRysunek(x, y, this);
-			swiat.setRysunek(prevX, prevY, nullptr);
+		if (napastnik->getSila() >= this->sila) {
+			swiat.umrzyj(napastnik, this);
+			swiat.setRysunek(x, y, napastnik);
+			swiat.setRysunek(napastnik->getPrevX(), napastnik->getPrevY(), nullptr);
 		}
+		if (napastnik->getSila() < this->sila) {
+			swiat.umrzyj(this, napastnik);
+		}
+
 	}
 }

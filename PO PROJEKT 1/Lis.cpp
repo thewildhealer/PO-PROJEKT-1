@@ -15,16 +15,6 @@ void Lis::akcja() {
 	// tu moze cos bedzie jeszcze, a jak nei to wyrzuce te metode
 }
 
-void Lis::kolizja() {
-	// ten if wywala wyjatki (juz rzadziej)
-	// ale zaczal wywalac stack overflow :<
-	if (swiat.getRysunek(x, y) != nullptr && swiat.getRysunek(x, y)->getSila() > sila) {
-		x = prevX;
-		y = prevY;
-		this->akcja();
-	}
-	else if (swiat.getRysunek(x, y) != nullptr) Zwierze::kolizja();
-}
 
 char Lis::rysowanie() {
 	return 'l';

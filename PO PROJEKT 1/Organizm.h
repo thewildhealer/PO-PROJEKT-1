@@ -10,7 +10,7 @@ public:
 	virtual ~Organizm();
 
 	virtual void akcja() = 0;
-	virtual void kolizja() = 0;
+	virtual void kolizja(Organizm* napastnik) = 0;
 	virtual char rysowanie() = 0;
 
 	int getX() const;

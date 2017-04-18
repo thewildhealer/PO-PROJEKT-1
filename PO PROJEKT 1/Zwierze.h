@@ -11,7 +11,7 @@ public:
 	~Zwierze();
 
 	void akcja() override;
-	void kolizja() override;
+	void kolizja(Organizm* napastnik) override;
 	char rysowanie() override = 0;
 	virtual void kopuluj(int x, int y) = 0;
 

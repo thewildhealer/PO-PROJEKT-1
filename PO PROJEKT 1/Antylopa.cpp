@@ -18,8 +18,8 @@ void Antylopa::akcja() {
 	Zwierze::akcja();
 }
 
-void Antylopa::kolizja() {
-	Zwierze::kolizja(); // tutaj dorzucic jakos trzeba 50% szans na ucieczke
+void Antylopa::kolizja(Organizm* napastnik) {
+	Zwierze::kolizja(napastnik); // tutaj dorzucic jakos trzeba 50% szans na ucieczke
 }
 
 char Antylopa::rysowanie() {
