@@ -19,7 +19,12 @@ void Antylopa::akcja() {
 }
 
 void Antylopa::kolizja(Organizm* napastnik) {
-	Zwierze::kolizja(napastnik); // tutaj dorzucic jakos trzeba 50% szans na ucieczke
+	int los = rand() % 2;
+	if (los && napastnik->rysowanie() != 'a') {
+		akcja();
+		swiat.nieudanyAtak(napastnik, this);
+	}
+	else Zwierze::kolizja(napastnik);
 }
 
 char Antylopa::rysowanie() {

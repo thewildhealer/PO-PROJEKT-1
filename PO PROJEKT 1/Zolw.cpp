@@ -2,13 +2,13 @@
 
 
 Zolw::Zolw(Swiat& swiat) : Zwierze(swiat) {
-	sila = 4;
-	inicjatywa = 4;
+	sila = 2;
+	inicjatywa = 1;
 }
 
 Zolw::Zolw(int x, int y, Swiat& swiat) : Zwierze(x, y, swiat) {
-	sila = 4;
-	inicjatywa = 4;
+	sila = 2;
+	inicjatywa = 1;
 }
 
 
@@ -23,7 +23,7 @@ void Zolw::kolizja(Organizm* napastnik) {
 		napastnik->setY(getPrevY());
 		swiat.nieudanyAtak(napastnik, this);
 	}
-	else Zwierze::kolizja(napastnik); // tutaj dorzucic jakos trzeba odpieranie ataku
+	else Zwierze::kolizja(napastnik); 
 }
 
 char Zolw::rysowanie() {
