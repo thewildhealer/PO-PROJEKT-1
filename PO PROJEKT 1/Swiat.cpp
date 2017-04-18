@@ -6,7 +6,6 @@ Swiat::Swiat() : szerokosc(5), wysokosc(5), komentator(new Komentator) {
 }
 
 Swiat::Swiat(int x, int y) : szerokosc(x), wysokosc(y), komentator(new Komentator) {
-	std::cout << "konstruktor swiata o szerokosci " << x << " i wysokosci " << y << std::endl;
 	inicjalizujRysunek();
 }
 

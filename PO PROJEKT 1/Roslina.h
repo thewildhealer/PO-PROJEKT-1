@@ -14,5 +14,7 @@ public:
 
 	virtual std::string getNazwa() = 0;
 	~Roslina();
+protected:
+	bool nowoZasiana;
 };
 

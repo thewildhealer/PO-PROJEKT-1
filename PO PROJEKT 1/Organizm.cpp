@@ -12,6 +12,7 @@ Organizm::Organizm(Swiat& swiat) : swiat(swiat) {
 Organizm::Organizm(int x, int y, Swiat& swiat) : x(x), y(y), swiat(swiat) {
 	if (swiat.getRysunek(x, y) == nullptr)
 		swiat.setRysunek(x, y, this);
+	else Organizm::~Organizm();
 }
 
 Organizm::~Organizm() {
@@ -35,6 +36,14 @@ int Organizm::getPrevX() const {
 
 int Organizm::getPrevY() const {
 	return prevY;
+}
+
+void Organizm::setPrevX(int prevX) {
+	this->prevX = prevX;
+}
+
+void Organizm::setPrevY(int prevY) {
+	this->prevY = prevY;
 }
 
 int Organizm::getSila() const {	

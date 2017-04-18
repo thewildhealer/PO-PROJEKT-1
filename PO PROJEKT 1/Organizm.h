@@ -21,6 +21,8 @@ public:
 	int getInicjatywa() const;
 	int getPrevX() const;
 	int getPrevY() const;
+	void setPrevX(int prevX);
+	void setPrevY(int prevY);
 	virtual std::string getNazwa() = 0;
 
 protected:

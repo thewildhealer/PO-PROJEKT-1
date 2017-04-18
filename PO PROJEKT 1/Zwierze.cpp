@@ -14,6 +14,7 @@ Zwierze::Zwierze(int x, int y, Swiat& swiat) : Organizm(x, y, swiat) {
 
 Zwierze::~Zwierze() {
 }
+
 void Zwierze::akcja() {
 	prevX = x;
 	prevY = y;
@@ -43,19 +44,21 @@ void Zwierze::kolizja() {
 	// ten if chyba nie do konca dziala jak nalezy
 	int atakowanySila = swiat.getRysunek(x, y)->getSila();
 	if (typeid(*swiat.getRysunek(x, y)) == typeid(*this)) {
-		int i = -1, j = -1;
-		bool success = false;
-		for (; i < 1; ++i) {
-			for (; j < 1; ++j) {
-				if (x + i < swiat.getSzerokosc() - 1 && x + i >= 0 && // nie wykracza poza szerokoœæ
-					y + j < swiat.getWysokosc() - 1 && y + j > 0 && // nie wykracza poza wysokoœæ
-					swiat.getRysunek(x + i, y + j) == nullptr) { // nie rozmnaza sie gdy cos juz tam jest
-					success = true;
-					break;
-				}
-			}
+		
+		int count = 0;
+		int los = rand() % 10;
+		int i = 0, j = 0;
+		if (!los) {
+			while (count < 5 && swiat.getRysunek(x + i, y + j) != nullptr &&
+				x + i < swiat.getSzerokosc() - 1 && x + i > 0 &&
+				y + j < swiat.getWysokosc() - 1 && y + j > 0) {
+
+				i = (rand() % 3) - 1;
+				j = (rand() % 3) - 1;
+				count++;
+			};
 		}
-		if (success && swiat.getRysunek(x + i, y + j) == nullptr) {
+		if (swiat.getRysunek(x + i, y + j) == nullptr) {
 			swiat.narodziny(this, x + i, y + j);
 			this->kopuluj(x + i, y + j);
 		}
@@ -63,7 +66,7 @@ void Zwierze::kolizja() {
 		y = prevY;
 	}
 	else {
-		if (atakowanySila > this->sila) swiat.umrzyj(swiat.getRysunek(x, y), this);
+		if (atakowanySila > this->sila) swiat.umrzyj(swiat.getRysunek(x, y), this);	
 		if (atakowanySila <= this->sila) {
 			swiat.umrzyj(this, swiat.getRysunek(x, y));
 			swiat.setRysunek(x, y, this);
