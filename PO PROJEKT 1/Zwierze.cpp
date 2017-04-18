@@ -14,7 +14,6 @@ Zwierze::Zwierze(int x, int y, Swiat& swiat) : Organizm(x, y, swiat) {
 
 Zwierze::~Zwierze() {
 }
-
 void Zwierze::akcja() {
 	prevX = x;
 	prevY = y;

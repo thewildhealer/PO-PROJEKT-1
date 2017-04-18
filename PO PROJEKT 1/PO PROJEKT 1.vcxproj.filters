@@ -42,6 +42,12 @@
     <ClInclude Include="Zolw.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Roslina.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Trawa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Swiat.cpp">
@@ -72,6 +78,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Zolw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Roslina.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Trawa.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

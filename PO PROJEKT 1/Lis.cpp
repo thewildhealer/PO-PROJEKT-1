@@ -23,7 +23,7 @@ void Lis::kolizja() {
 		y = prevY;
 		this->akcja();
 	}
-	else this->kolizja();
+	else if (swiat.getRysunek(x, y) != nullptr) Zwierze::kolizja();
 }
 
 char Lis::rysowanie() {

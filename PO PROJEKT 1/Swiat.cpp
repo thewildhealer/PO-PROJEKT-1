@@ -42,6 +42,10 @@ void Swiat::narodziny(Organizm* org, int x, int y) {
 	komentator->komentujNarodziny(org, x, y);
 }
 
+void Swiat::nowaRoslina(Organizm* org, int x, int y) {
+	komentator->komentujNowaRoslina(org, x, y);
+}
+
 void Swiat::inicjalizujRysunek() {
 	rysunek = new Organizm*[szerokosc * wysokosc];
 	for (int i = 0; i < szerokosc * wysokosc; i++)
