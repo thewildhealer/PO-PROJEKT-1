@@ -60,6 +60,12 @@ void Swiat::wykonajTure() {
 	for (int i = 0; i < organizmy.size(); i++) {
 		organizmy[i]->akcja();
 	}
+
+	// w razie czego, usuwanie duplikatow pod koniec tury , tego pewnie mogloby nawet tu nie byc jakby zalezalo mi na wydajnosci
+	for (int i = 0; i < szerokosc * wysokosc; i++)
+		rysunek[i] = nullptr;
+	for (Organizm* org : organizmy)
+		setRysunek(org->getX(), org->getY(), org);
 }
 
 void Swiat::rysujSwiat() {
