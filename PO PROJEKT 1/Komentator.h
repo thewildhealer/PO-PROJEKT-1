@@ -15,6 +15,7 @@ public:
 	void komentujNarodziny(Organizm* org, int x, int y);
 	void komentujNowaRoslina(Organizm* org, int x, int y);
 	void komentujNieudanyAtak(Organizm* napastnik, Organizm* ofiara);
+	void komentujUmiejetnosc(Organizm* org, int czasTrwania);
 
 private:
 	std::vector<std::string> komentarze;

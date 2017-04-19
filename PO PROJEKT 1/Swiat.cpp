@@ -50,6 +50,10 @@ void Swiat::nieudanyAtak(Organizm* napastnik, Organizm* ofiara) {
 	komentator->komentujNieudanyAtak(napastnik, ofiara);
 }
 
+void Swiat::umiejetnoscAktywowana(Organizm* org, int czasTrwania) {
+	komentator->komentujUmiejetnosc(org, czasTrwania);
+}
+
 void Swiat::aktualizujRysunek() {
 	// w razie czego, usuwanie duplikatow pod koniec tury , tego pewnie mogloby nawet tu nie byc jakby zalezalo mi na wydajnosci
 	for (int i = 0; i < szerokosc * wysokosc; i++)
