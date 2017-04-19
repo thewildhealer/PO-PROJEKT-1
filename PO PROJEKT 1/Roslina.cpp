@@ -19,7 +19,7 @@ void Roslina::akcja() {
 
 	if (!nowoZasiana) {
 		int count = 0;
-		int los = rand() % 5;
+		int los = rand() % 10;
 		int i = 0, j = 0;
 		if (!los) {
 			while (count < 5 && swiat.getRysunek(x + i, y + j) != nullptr &&

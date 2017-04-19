@@ -50,6 +50,14 @@ void Swiat::nieudanyAtak(Organizm* napastnik, Organizm* ofiara) {
 	komentator->komentujNieudanyAtak(napastnik, ofiara);
 }
 
+void Swiat::aktualizujRysunek() {
+	// w razie czego, usuwanie duplikatow pod koniec tury , tego pewnie mogloby nawet tu nie byc jakby zalezalo mi na wydajnosci
+	for (int i = 0; i < szerokosc * wysokosc; i++)
+		rysunek[i] = nullptr;
+	for (Organizm* org : organizmy) 
+		setRysunek(org->getX(), org->getY(), org);
+}
+
 void Swiat::inicjalizujRysunek() {
 	rysunek = new Organizm*[szerokosc * wysokosc];
 	for (int i = 0; i < szerokosc * wysokosc; i++)
@@ -61,12 +69,10 @@ void Swiat::wykonajTure() {
 		organizmy[i]->akcja();
 	}
 
-	// w razie czego, usuwanie duplikatow pod koniec tury , tego pewnie mogloby nawet tu nie byc jakby zalezalo mi na wydajnosci
-	for (int i = 0; i < szerokosc * wysokosc; i++)
-		rysunek[i] = nullptr;
-	for (Organizm* org : organizmy)
-		setRysunek(org->getX(), org->getY(), org);
+	aktualizujRysunek();
 }
+
+
 
 void Swiat::rysujSwiat() {
 	/*

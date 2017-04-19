@@ -31,9 +31,9 @@ public:
 	void nowaRoslina(Organizm *org, int x, int y);
 	void nieudanyAtak(Organizm* napastnik, Organizm* ofiara);
 
+	void aktualizujRysunek();
 private:
 	int szerokosc, wysokosc;
-	//	char *rysunek;
 	Organizm** rysunek;
 	std::vector<Organizm*> organizmy;
 	Komentator* komentator;
