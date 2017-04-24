@@ -36,7 +36,9 @@ void Czlowiek::akcja() {
 	else if (zn == 'q' && licznik == 5) {
 		licznik = 0;
 		umiejetnoscWlaczona = true;
-	};
+	}
+	else if (zn == 'z') swiat.zapiszSwiat();
+	else if (zn == 'x') swiat.otworzSwiat();
 
 	/*
 	int zn;

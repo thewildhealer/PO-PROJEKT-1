@@ -4,6 +4,7 @@
 #include <algorithm>
 #include "Organizm.h"
 #include "Komentator.h"
+#include <fstream>
 
 class Organizm;
 class Komentator;
@@ -20,20 +21,25 @@ public:
 	void rysujSwiat();
 	void setRysunek(int x, int y, Organizm* org);
 	Organizm* getRysunek(int x, int y);
+	void aktualizujRysunek();
 
 	int getWysokosc() const;
 	int getSzerokosc() const;
 
 	void dodajOrganizm(Organizm* organizm);
 
+	// komentowanie organizmow
 	void umrzyj(Organizm* napastnik, Organizm* ofiara);
 	void narodziny(Organizm* org, int x, int y);
 	void nowaRoslina(Organizm *org, int x, int y);
 	void nieudanyAtak(Organizm* napastnik, Organizm* ofiara);
 	void umiejetnoscAktywowana(Organizm* org, int czasTrwania);
 
-	void aktualizujRysunek();
+	void zapiszSwiat();
+	void otworzSwiat();
+	
 private:
+	bool breakFlag;
 	int szerokosc, wysokosc;
 	Organizm** rysunek;
 	std::vector<Organizm*> organizmy;
